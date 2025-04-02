@@ -12,7 +12,17 @@ import { PokemonService } from "./pokemon.service";
 })
 export class AppComponent {
 	readonly #pokemonService = inject(PokemonService);
-	pokemonList = signal(this.#pokemonService.getPokemonList());
+	readonly pokemonList = signal(this.#pokemonService.getPokemonList());
+
+	readonly searchTerm = signal("");
+	readonly pokemonListFiltered = computed(() => {
+		const pokemonList = this.pokemonList();
+		const searchTerm = this.searchTerm();
+
+		return pokemonList.filter((pokemon) =>
+			pokemon.name.toLowerCase().includes(searchTerm.trim().toLowerCase()),
+		);
+	});
 
 	size(pokemon: Pokemon) {
 		if (pokemon.life < 15) {
