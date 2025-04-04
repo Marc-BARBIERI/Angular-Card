@@ -36,7 +36,7 @@
                                       [alt]="pokemon.name">
   </div>
   <div class="col-md-8">
-        <div class="card-body">
+       <div class="card-body">
               <h5 class="card-title">{{pokemon.name}}</h5>
               <h6 class="card-subtitle mb-2 text-body-secondary">taille: {{size(pokemon)}}</h6>
               <p class="card-text">{{pokemon.created |  date: "dd/mm/yyyy" }}</p>
@@ -55,7 +55,13 @@
               >
               -
         </button>
-        </div>
+      </div>
+        <p class="card-text">
+            <a class="text small text-muted"
+            [routerLink]="['/pokemons', pokemon.id]"
+            >Voir plus
+            </a>
+       </p>
   </div>
 </div>
 </div>
