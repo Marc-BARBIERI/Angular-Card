@@ -9,6 +9,7 @@ import {
 	FormGroup,
 	ReactiveFormsModule,
 } from "@angular/forms";
+import { getPokemonColor } from "../../pokemon.model";
 
 @Component({
 	selector: "app-pokemon-edit",
@@ -54,6 +55,13 @@ export class PokemonEditComponent {
 				.indexOf(type);
 			this.pokemonTypeList.removeAt(index);
 		}
+	}
+
+	getPokemonTypeColor(type: string) {
+		return getPokemonColor(type);
+	}
+	getShiptextColor(type: string): "black" | "white" {
+		return type === "Electrik" ? "black" : "white";
 	}
 
 	onSubmit() {
