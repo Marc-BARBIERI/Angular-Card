@@ -46,6 +46,11 @@ export class PokemonEditComponent {
 	get pokemonTypeList(): FormArray {
 		return this.form.get("types") as FormArray;
 	}
+
+	get pokemonName(): FormControl {
+		return this.form.get("name") as FormControl;
+	}
+
 	isPokemonTypeSelected(type: string): boolean {
 		return !!this.pokemonTypeList.controls.find(
 			(control) => control.value === type,

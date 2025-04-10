@@ -25,7 +25,33 @@
                       class="form-control"
                       [value]="pokemon().name"
                       placeholder="Nom du Pokémon"
+                      [class.is-invalid]="pokemonName.invalid"
                     />
+                    @if(pokemonName.hasError('required')) {
+                    <div class="invalid-feedback">
+                      Le nom du Pokémon est requis.
+                    </div>
+                    }
+                    @if(pokemonName.hasError('minlength')) {
+                      <div class="invalid-feedback">
+                        veuillez saisir un nom plus long. (Minimum: {{
+                          pokemonName.getError('minlength').requiredLength
+                        }})
+                      </div>
+                      }
+                      @if(pokemonName.hasError('maxlength')) {
+                        <div class="invalid-feedback">
+                          veuillez saisir un nom plus court. (Maximum: {{
+                            pokemonName.getError('maxlength').requiredLength
+                          }})
+                        </div>
+                        }
+                        @if(pokemonName.hasError('pattern')) {
+                          <div class="invalid-feedback">
+                            Le nom du Pokémon ne doit pas contenir de
+                            caractères spéciaux.
+                          </div>
+                          }
                   </td>
                 </tr>
                 <tr>
