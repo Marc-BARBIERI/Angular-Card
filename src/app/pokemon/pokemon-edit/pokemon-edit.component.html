@@ -107,6 +107,16 @@
                       [style.color]="getShiptextColor(type.value)">x</span>
                     </button>
                     }
+                    @if(pokemonTypeList.hasError('required')) {
+                      <p class="text-danger">
+                        Au moins un type est requis.
+                      </p>
+                      }
+                        @if(pokemonTypeList.hasError('maxlength')) {
+                          <p class="text-danger">
+                            Vous ne pouvez pas sélectionner plus de {{pokemonTypeList.getError("maxlength").requiredLength}} types pour un Pokémon.
+                          </p>
+                          }
                     <div class="row mt-3">
                       @for(type of pokemonService.getPokemonTypeList(); track
                       type) {
