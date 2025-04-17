@@ -58,7 +58,7 @@
                   <th scope="row">Points de vie</th>
                   <td>
                     <div class="input-group">
-                      <button class="btn btn-outline-secondary" disabled>
+                      <button class="btn btn-outline-secondary" [disabled]="pokemonLife.value <= POKEMON_RULES.MIN_LIFE" (click)="decrementLife()">
                         -
                       </button>
                       <input
@@ -67,7 +67,7 @@
                         class="form-control text-center"
                         [value]="pokemon().life"
                       />
-                      <button class="btn btn-outline-secondary" disabled>
+                      <button class="btn btn-outline-secondary" [disabled]="pokemonLife.value >= POKEMON_RULES.MAX_LIFE" (click)="incrementLife()">
                         +
                       </button>
                     </div>
@@ -77,7 +77,7 @@
                   <th scope="row">Dégâts</th>
                   <td>
                     <div class="input-group">
-                      <button class="btn btn-outline-secondary" disabled>
+                      <button class="btn btn-outline-secondary" [disabled]="pokemonDamage.value <= POKEMON_RULES.MIN_DAMAGE" (click)="decrementDamage()">
                         -
                       </button>
                       <input
@@ -86,7 +86,7 @@
                         class="form-control text-center"
                         [value]="pokemon().damage"
                       />
-                      <button class="btn btn-outline-secondary" disabled>
+                      <button class="btn btn-outline-secondary" [disabled]="pokemonDamage.value >= POKEMON_RULES.MAX_DAMAGE" (click)="incrementDamage()">
                         +
                       </button>
                     </div>

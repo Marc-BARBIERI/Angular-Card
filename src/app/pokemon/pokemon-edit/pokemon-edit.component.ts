@@ -29,6 +29,8 @@ export class PokemonEditComponent {
 		this.pokemonService.getPokemonById(this.pokemonId()),
 	).asReadonly();
 
+	readonly POKEMON_RULES = POKEMON_RULES;
+
 	readonly form = new FormGroup({
 		name: new FormControl(this.pokemon().name, [
 			Validators.required,
@@ -49,6 +51,34 @@ export class PokemonEditComponent {
 
 	get pokemonName(): FormControl {
 		return this.form.get("name") as FormControl;
+	}
+
+	get pokemonLife(): FormControl {
+		return this.form.get("life") as FormControl;
+	}
+
+	get pokemonDamage(): FormControl {
+		return this.form.get("damage") as FormControl;
+	}
+
+	incrementLife() {
+		const newValue = this.pokemonLife.value + 1;
+		this.pokemonLife.setValue(newValue);
+	}
+
+	decrementLife() {
+		const newValue = this.pokemonLife.value - 1;
+		this.pokemonLife.setValue(newValue);
+	}
+
+	incrementDamage() {
+		const newValue = this.pokemonDamage.value + 1;
+		this.pokemonDamage.setValue(newValue);
+	}
+
+	decrementDamage() {
+		const newValue = this.pokemonDamage.value - 1;
+		this.pokemonDamage.setValue(newValue);
 	}
 
 	isPokemonTypeSelected(type: string): boolean {
