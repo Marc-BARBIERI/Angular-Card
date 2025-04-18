@@ -24,6 +24,11 @@ export class PokemonService {
 		return this.#http.put<Pokemon>(url, pokemon);
 	}
 
+	deletePokemon(id: number): Observable<void> {
+		const url = `${this.#POKEMON_API_URL}/${id}`;
+		return this.#http.delete<void>(url);
+	}
+
 	getPokemonTypeList(): string[] {
 		return [
 			"Plante",
