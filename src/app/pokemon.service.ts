@@ -14,12 +14,9 @@ export class PokemonService {
 	getPokemonList(): Observable<PokemonList> {
 		return this.#http.get<PokemonList>(this.#POKEMON_API_URL);
 	}
-	getPokemonById(id: number): Pokemon {
-		const pokemon = POKEMON_LIST.find((pokemon) => pokemon.id === id);
-		if (!pokemon) {
-			throw new Error(`Pokemon with id ${id} not found`);
-		}
-		return pokemon;
+	getPokemonById(id: number): Observable<Pokemon> {
+		const url = `${this.#POKEMON_API_URL}/${id}`;
+		return this.#http.get<Pokemon>(url);
 	}
 	getPokemonTypeList(): string[] {
 		return [
