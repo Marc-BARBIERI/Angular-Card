@@ -135,6 +135,18 @@
         "Feu"
       ],
       "created": "2024-08-16T00:00:00Z"
+    },
+    {
+      "name": "voltorbe",
+      "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/100.png",
+      "life": 15,
+      "damage": 3,
+      "types": [
+        "Electrik",
+        "Normal"
+      ],
+      "created": "2025-04-22T08:43:10.126Z",
+      "id": 13
     }
   ]
 }

@@ -15,18 +15,22 @@ export class PokemonService {
 		return this.#http.get<PokemonList>(this.#POKEMON_API_URL);
 	}
 	getPokemonById(id: number): Observable<Pokemon> {
-		const url = `${this.#POKEMON_API_URL}/${id}`;
-		return this.#http.get<Pokemon>(url);
+		return this.#http.get<Pokemon>(`${this.#POKEMON_API_URL}/${id}`);
 	}
 
 	updatePokemon(pokemon: Pokemon): Observable<Pokemon> {
-		const url = `${this.#POKEMON_API_URL}/${pokemon.id}`;
-		return this.#http.put<Pokemon>(url, pokemon);
+		return this.#http.put<Pokemon>(
+			`${this.#POKEMON_API_URL}/${pokemon.id}`,
+			pokemon,
+		);
 	}
 
-	deletePokemon(id: number): Observable<void> {
-		const url = `${this.#POKEMON_API_URL}/${id}`;
-		return this.#http.delete<void>(url);
+	deletePokemon(pokemonId: number): Observable<void> {
+		return this.#http.delete<void>(`${this.#POKEMON_API_URL}/${pokemonId}`);
+	}
+
+	addPokemon(pokemon: Omit<Pokemon, "id">): Observable<Pokemon> {
+		return this.#http.post<Pokemon>(this.#POKEMON_API_URL, pokemon);
 	}
 
 	getPokemonTypeList(): string[] {
