@@ -1,59 +1,55 @@
-# AngularCardApp
+# Angular Card App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.5.
+Projet réalisé dans le cadre de la formation Angular de Simon DIENY (expert Angular) via Udemy.
+Cette application a été construite pour mettre en pratique les concepts clés d’Angular avec une API simulée.
 
-## Development server
+## 🚀 Fonctionnalités
 
-To start a local development server, run:
+- Affichage des cartes via une API locale (`json-server`)
+- Utilisation d’Angular (version 19)
+- Composants Angular modulaires
+- Chargement dynamique des données
 
-```bash
-ng serve
-```
+## 🛠️ Stack technique
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Frontend** : Angular 19
+- **Backend**  : NodeJs
+- **Langages** : TypeScript, HTML, CSS
 
-## Code scaffolding
+## 🎨 Présentation visuelle
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
-```bash
-ng generate component component-name
-```
+### Modale de connexion
+Une modale permet à l'utilisateur de se connecter via un formulaire accessible depuis la barre de navigation.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+<img src="public/modal-connexion.png" alt="Accueil" width="600"/>
 
-```bash
-ng generate --help
-```
+### Page d'accueil
+Affiche la liste des Pokémon sous forme de cartes avec leurs noms, images et types. Un bouton permet d'accéder aux différentes équipes Pokémon.
 
-## Building
+<img src="public/Page-Accueil.png" alt="Accueil" width="600"/>
 
-To build the project run:
 
-```bash
-ng build
-```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### Détail d'un Pokémon
+En cliquant sur une carte, une fenêtre modale s’ouvre pour afficher les détails complets du Pokémon sélectionné : nom, image, types, statistiques, etc.
 
-## Running unit tests
+<img src="public/Detail-card.png" alt="Accueil" width="600"/>
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### Édition d'un Pokémon
+Depuis le détail, il est possible d’ouvrir un formulaire pour modifier les informations du Pokémon (nom, types, points de vie, dégâts).
 
-```bash
-ng test
-```
+<img src="public/edit-card.png" alt="Accueil" width="600"/>
 
-## Running end-to-end tests
+### Ajout d'un Pokémon
+Une fonctionnalité permet d'ajouter un nouveau Pokémon via un formulaire dédié accessible depuis la page d'accueil ou la barre de navigation.
 
-For end-to-end (e2e) testing, run:
+<img src="public/card-add.png" alt="Accueil" width="600"/>
 
-```bash
-ng e2e
-```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
-## Additional Resources
+- Ce projet est une excellente base pour apprendre Angular en mettant en pratique la gestion d’une API locale, la manipulation de composants, et l’interactivité via des modales.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+
+
